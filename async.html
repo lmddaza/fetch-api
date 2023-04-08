@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Users: </h1>
+    <ul> </ul>
+    
+   <script>
+    async function loadUsers(){
+        return (await fetch('http://jsonplaceholder.typicode.com/posts' )).json();
+    }
+    document.addEventListener("DOMContentLoaded", async () => {
+        let users = [];
+
+        try{
+            users = await loadUsers();
+           
+
+        } catch (e) {
+            console.log("Error");
+            console.log(e);
+            
+            
+
+            
+        }
+
+        console.log(users)
+    })
+   </script> 
+
+
+
+</body>
+</html>
